@@ -39,12 +39,14 @@ ul {
 /* --- Navbar --- */
 .navbar {
     border-bottom: 1px solid var(--border-color);
-    padding: 15px 0;
+    padding: 12px 0;
     position: sticky;
     top: 0;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     z-index: 100;
+    box-shadow: 0 2px 12px rgba(139, 92, 246, 0.06);
 }
 
 .nav-container {
@@ -53,35 +55,87 @@ ul {
     align-items: center;
 }
 
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-dark);
+    letter-spacing: -0.5px;
+}
 
+.logo-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    color: white;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    margin-right: 4px;
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.35);
+}
 
 .nav-links {
     display: flex;
-    gap: 25px;
+    gap: 8px;
     align-items: center;
 }
 
 .nav-links a {
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 500;
     color: var(--text-dark);
-    transition: color 0.3s ease;
+    padding: 8px 14px;
+    border-radius: 8px;
+    position: relative;
+    transition: all 0.25s ease;
 }
 
 .nav-links a:hover {
     color: var(--primary-color);
+    background: rgba(139, 92, 246, 0.08);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 4px;
+    height: 2px;
+    background: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.25s ease;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
 }
 
 .btn-primary-sm {
-    background: var(--text-dark);
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
     color: white !important;
-    padding: 8px 16px;
-    border-radius: 6px;
-    transition: background 0.3s;
+    padding: 9px 18px !important;
+    border-radius: 8px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
 }
 
 .btn-primary-sm:hover {
-    background: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(139, 92, 246, 0.45);
+    background: linear-gradient(135deg, #7c3aed, #6d28d9) !important;
+}
+
+.btn-primary-sm::after {
+    display: none;
 }
 
 /* --- Hero Section --- */
@@ -169,8 +223,10 @@ ul {
 
 .skill-tag:hover {
     border-color: var(--primary-color);
-    color: var(--primary-color);
-    background: white;
+    color: white;
+    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(139, 92, 246, 0.35);
 }
 
 /* --- Timeline (Experience & Education) --- */
@@ -345,7 +401,74 @@ ul {
     background: var(--bg-light);
 }
 
-/* --- Testimonials --- */
+/* --- Education Section (Colorful) --- */
+#education {
+    background: linear-gradient(135deg, #faf5ff 0%, #fdf2f8 50%, #eff6ff 100%);
+    border-radius: 24px;
+    margin: 0 auto;
+    padding: 80px 40px;
+}
+
+#education .section-title {
+    background: linear-gradient(90deg, #8b5cf6, #ec4899, #3b82f6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+#education .timeline {
+    border-left: 3px solid transparent;
+    border-image: linear-gradient(180deg, #8b5cf6, #ec4899, #3b82f6) 1;
+    margin-left: 10px;
+    padding-left: 30px;
+}
+
+#education .timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    background: white;
+    border-radius: 14px;
+    padding: 24px 28px;
+    box-shadow: 0 8px 24px rgba(139, 92, 246, 0.08);
+    border: 1px solid rgba(139, 92, 246, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#education .timeline-item:hover {
+    transform: translateX(6px);
+    box-shadow: 0 12px 32px rgba(139, 92, 246, 0.16);
+}
+
+#education .timeline-dot {
+    left: -40px;
+    top: 28px;
+    width: 16px;
+    height: 16px;
+    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.25);
+}
+
+#education .timeline-content h3 {
+    color: #7c3aed;
+}
+
+#education .institution {
+    color: #ec4899;
+    font-weight: 600;
+}
+
+#education .date {
+    display: inline-block;
+    background: rgba(139, 92, 246, 0.1);
+    color: #7c3aed;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+/* --- Testimonials (colorful) --- */
 .testimonials-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -355,8 +478,28 @@ ul {
 .testimonial-card {
     border: 1px solid var(--border-color);
     padding: 30px;
-    border-radius: 12px;
-    background: var(--bg-color);
+    border-radius: 16px;
+    background: white;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card::before {
+    content: '\201C';
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    font-size: 120px;
+    color: rgba(139, 92, 246, 0.08);
+    font-family: Georgia, serif;
+    line-height: 1;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(139, 92, 246, 0.15);
+    border-color: rgba(139, 92, 246, 0.3);
 }
 
 .testimonial-card p {
@@ -364,19 +507,14 @@ ul {
     color: var(--text-dark);
     margin-bottom: 20px;
     font-style: italic;
+    position: relative;
+    z-index: 1;
 }
 
 .client-info {
     display: flex;
     align-items: center;
     gap: 15px;
-}
-
-.client-info img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
 }
 
 .client-info h4 {
@@ -389,19 +527,86 @@ ul {
     color: var(--text-light);
 }
 
- /* blog  */
-  .bloges{
-    border: solid 1px black;
-    width: 1100px;
-    margin: auto;
-    padding: 30px;
-    border-radius: 10px;
-  }
+/* --- Blogs Section --- */
+.blogs-section {
+    background: linear-gradient(180deg, #f5f3ff 0%, #ffffff 100%);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
 
-   .bloges h1 {
-    font-size: 30px;
-    font-weight: bold;
-   }
+.blogs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.blog-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(139, 92, 246, 0.18);
+}
+
+.blog-card-accent {
+    height: 6px;
+    width: 100%;
+}
+
+.accent-1 { background: linear-gradient(90deg, #8b5cf6, #ec4899); }
+.accent-2 { background: linear-gradient(90deg, #06b6d4, #3b82f6); }
+.accent-3 { background: linear-gradient(90deg, #f59e0b, #ef4444); }
+
+.blog-card-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+}
+
+.blog-date {
+    font-size: 13px;
+    color: var(--text-light);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.blog-card-body h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.3;
+}
+
+.blog-card-body p {
+    color: var(--text-light);
+    font-size: 15px;
+    flex: 1;
+}
+
+.blog-read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 8px;
+    transition: gap 0.2s ease;
+}
+
+.blog-read-more:hover {
+    gap: 12px;
+}
   /* --- Professional Footer Styles --- */
 .main-footer {
     background-color: var(--bg-light); /* হালকা ধূসর ব্যাকগ্রাউন্ড */
@@ -496,7 +701,15 @@ ul {
     color: var(--primary-color);
 }
 
-/* Responsive Footer for Mobile */
+
+.client-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #8b5cf6;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
+}
 @media (max-width: 768px) {
     .footer-top {
         flex-direction: column;
@@ -535,6 +748,16 @@ ul {
 
     .testimonials-grid {
         grid-template-columns: 1fr;
+    }
+
+    .blogs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #education {
+        margin: 0 auto;
+        padding: 60px 20px;
+        border-radius: 0;
     }
 }
 

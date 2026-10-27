@@ -16,9 +16,10 @@
     <nav class="navbar">
         <div class="container nav-container">
             <div class="logo">
-               <h2 > <span style="color: rgb(107, 33, 192); font-size: 40px;"> A</span>nnika</h2>
+                <a href="#hero"><span class="logo-mark">A</span>nnika</a>
             </div>
             <ul class="nav-links">
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#education">Education</a></li>
@@ -30,7 +31,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero container">
+    <section class="hero container" id="hero">
         <div class="hero-image">
            
             <img src="/girls-1.jpg" alt="Arif Hossain">
@@ -51,17 +52,16 @@
     <section class="section container" id="skills">
         <h2 class="section-title">My Skills</h2>
         <div class="skills-grid">
+             <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
             <span class="skill-tag">JavaScript</span>
             <span class="skill-tag">TypeScript</span>
             <span class="skill-tag">React.js</span>
-            <span class="skill-tag">Next.js</span>
-            <span class="skill-tag">Node.js</span>
-            <span class="skill-tag">Express.js</span>
+            <span class="skill-tag">Next.js</span> 
+            <span class="skill-tag">figma</span> 
             <span class="skill-tag">TailwindCSS</span>
             <span class="skill-tag">MongoDB</span>
-            <span class="skill-tag">MySQL</span>
-            <span class="skill-tag">GraphQL</span>
-        </div>
+         
     </section>
 
     <!-- Work Experience -->
@@ -199,7 +199,7 @@
             <div class="testimonial-card">
                 <p>"John is a fantastic developer who consistently delivers high-quality work. His ability to solve complex problems is impressive."</p>
                 <div class="client-info">
-                    <img src="https://i.pravatar.cc/150?img=1" alt="Jane Smith"> <!-- ইমেজ লিংক পরিবর্তন করুন -->
+                    <img src="https://i.pravatar.cc/150?img=1" alt="Jane Smith">
                     <div>
                         <h4>Jane Smith</h4>
                         <span>Project Manager @ Tech Solutions Inc.</span>
@@ -210,10 +210,32 @@
             <div class="testimonial-card">
                 <p>"John is a highly skilled developer who brings a lot of value to our projects. His expertise in full stack development is top-notch."</p>
                 <div class="client-info">
-                    <img src="https://i.pravatar.cc/150?img=11" alt="Mike Johnson"> <!-- ইমেজ লিংক পরিবর্তন করুন -->
+                    <img src="https://i.pravatar.cc/150?img=11" alt="Mike Johnson">
                     <div>
                         <h4>Mike Johnson</h4>
                         <span>CEO @ Web Innovators LLC</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <p>"Working with Annika was an absolute pleasure. She delivered our project ahead of schedule with exceptional quality and attention to detail."</p>
+                <div class="client-info">
+                    <img src="https://i.pravatar.cc/150?img=32" alt="Sarah Lee">
+                    <div>
+                        <h4>Sarah Lee</h4>
+                        <span>Founder @ Creative Studio</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <p>"Her communication skills and technical expertise are outstanding. I would highly recommend her for any full-stack development needs."</p>
+                <div class="client-info">
+                    <img src="https://i.pravatar.cc/150?img=47" alt="David Kim">
+                    <div>
+                        <h4>David Kim</h4>
+                        <span>CTO @ Startup Hub</span>
                     </div>
                 </div>
             </div>
@@ -222,23 +244,43 @@
     </section>
 
     <!-- Blogs Section -->
-   <div class="bloges">
-      <section class="section container" id="blogs">
-        <h2 class="section-title">Blogs</h2>
-        
-        <div class="blog-post">
-            <h3 style="font-size: 30px; font-weight: bold;">How the Blog Feature Work...</h3>
-            <p>Learn how to use MDX and NextJS to add static blogs in your website</p>
-            <span class="blog-date">Published at: 2nd Jul, 2024</span>
-        </div>
- <br> 
-        <div class="blog-post">
-            <h3  style="font-size: 30px; font-weight: bold;"  >Welcome to LogsFolio Website! 👋</h3>
-            <p>Although there are many open-source portfolio websites out there, <br> but most of them are hard to customize! I created Logsfolio <br>solves it for you.</p>
-        </div>
-    </section>
+    <div class="blogs-section">
+       <section class="section container" id="blogs">
+         <h2 class="section-title">Blogs</h2>
+         
+         <div class="blogs-grid">
+            <article class="blog-card">
+                <div class="blog-card-accent accent-1"></div>
+                <div class="blog-card-body">
+                    <span class="blog-date"><i class="far fa-calendar-alt"></i> Published at: 2nd Jul, 2024</span>
+                    <h3>How the Blog Feature Work...</h3>
+                    <p>Learn how to use MDX and NextJS to add static blogs in your website.</p>
+                    <a href="#" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
 
-   </div>
+            <article class="blog-card">
+                <div class="blog-card-accent accent-2"></div>
+                <div class="blog-card-body">
+                    <span class="blog-date"><i class="far fa-calendar-alt"></i> Published at: 1st Jul, 2024</span>
+                    <h3>Welcome to LogsFolio Website! 👋</h3>
+                    <p>Although there are many open-source portfolio websites out there, most of them are hard to customize! I created Logsfolio to solve it for you.</p>
+                    <a href="#" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="blog-card-accent accent-3"></div>
+                <div class="blog-card-body">
+                    <span class="blog-date"><i class="far fa-calendar-alt"></i> Published at: 28th Jun, 2024</span>
+                    <h3>Building Scalable Full-Stack Apps</h3>
+                    <p>Tips and best practices for architecting modern web applications with React and Node.js.</p>
+                    <a href="#" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+         </div>
+       </section>
+    </div>
     
         <!-- Professional Footer Section -->
     <footer class="main-footer">
